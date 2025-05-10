@@ -1,0 +1,125 @@
+/* Defino variables globales para hacer más simples las pruebas de colores */
+:root {
+    --color-primario: #3c3c3c;
+    --color-secundario: #555;
+    --color-hover: #ebebeb;
+    --color-texto-header:  #ebebeb;
+    --color-fondo: #f6f6f6;  
+    --color-texto: #4f4f4f; 
+    --color-borde: #ddd;      /* Color de los bordes */
+    --color-titulo: #222;   
+    --color-grilla: #caf3cb; 
+    --color-grilla-oscuro: #6d8556;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    text-align: center;
+    background-image: 
+        /* Fondo de grilla cuadrille */
+        linear-gradient(to right, var(--color-grilla) 1px, transparent 1px), 
+        linear-gradient(to bottom, var(--color-grilla) 1px, transparent 1px);
+    background-size: 20px 20px; /* Tamaño de cada cuadrícula */
+    color: var(--color-texto);
+}
+
+/* Estilos encabezado */
+#header {
+    background-color: var(--color-primario);
+    color: var(--color-texto-header);
+    padding: 20px;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra abajo del recuadro del encabezado */
+}
+
+/* Estilos de los titulos*/
+.section-titulo {
+    color: var(--color-grilla-oscuro); 
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Estilos de las secciones (cards) */
+.section-card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px; /* Redondeo las esquinas de las cards de las secciones */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    transition: box-shadow 0.3s ease; /* Suaviza la transición de la sombra */
+}
+
+/* Añadir hover a las secciones */
+.section-card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Sombra suave al pasar por encima de las cards */
+}
+
+/* Estilos de la imagen de perfil */
+.perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; /* Esto lo googlee, necesitaba mejorar como se disponia la imagen en el contenedor sin perder la relacion */
+    margin-top: 10px; /* Espacio arriba de la imagen */
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes de la tabla para que no queden espacios */
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid var(--color-borde);
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Suaviza la transición del hover en las celdas */
+    color: var(--color-texto); 
+}
+
+th {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-header);
+}
+
+/* Hover en las celdas */
+td:hover {
+    background-color: var(--color-hover);
+}
+
+/* Estilos del formulario */
+form {
+    display: flex; /* Ya conocía flex y traté d eimplementarlo acá */
+    flex-direction: column; 
+    gap: 10px; /* Espacio entre los elementos del formulario */
+}
+
+input {
+    padding: 8px;
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    color: var(--color-texto); 
+}
+
+/* Estilos del botón */
+.btn-enviar {
+    background-color: var(--color-primario);
+    color: var(--color-texto-header);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Suaviza la transición del hover */
+}
+
+/* Estilos cuando el botón está en hover */
+.btn-enviar:hover {
+    background-color: var(--color-secundario);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}

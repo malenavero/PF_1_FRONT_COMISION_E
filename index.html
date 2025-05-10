@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header id="header">
+        <h1 id="titulo-principal">Mi Portfolio</h1>
+    </header>
+
+    <!-- Sección principal con presentación -->
+    <main>
+        <section id="sobre-mi" class="section-card">
+            <h2 class="section-titulo">Sobre mí</h2>
+            <!-- TODO: Pensar la presentación para que quede en dos renglones separados o ver el formato para que quede mejor visualmente -->
+            <p>¡Hola! Soy Male, fan de la resolución de bugs pero también siempre listo para empezar un proyecto de cero.</p>
+            <img src="img/pizza.png" alt="Mi foto" class="perfil">
+        </section>
+
+        <!-- Tabla con tecnologías y hobbies -->
+        <section id="tecnologias" class="section-card">
+            <h2 class="section-titulo">Tecnologías, lenguajes y hobbies</h2>
+            <table>
+                <tr>
+                    <th>¿Qué conozco?</th>
+                    <th>¿Qué quiero aprender?</th>
+                    <th>Hobbies</th>
+                </tr>
+                <tr>
+                    <td>Python(Django, DRF), JS(NodeJS), C#, MongoDB</td>
+                    <td>JAVA, C++, C</td>
+                    <td>Tango, gastronomía vegana y fotografía</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Formulario de contacto -->
+        <section id="contacto" class="section-card">
+            <h2 class="section-titulo">Contacto</h2>
+            <form id="formulario-contacto">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+                
+                <!-- al poner type email valida el formato de mail -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono">
+                
+                <button type="submit" class="btn-enviar">Enviar</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
