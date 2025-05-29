@@ -7,7 +7,8 @@
   --color-hover: #dcd1c4;
   --color-texto-header: #f0eadc;
   --color-texto-oscuro: #3c3c3c;
-  --color-fondo: #f9fce1;
+  --color-fondo: #fbfdf1;
+  --color-tarjeta-item: #f9fce1;
   --color-texto: #4a3f3b;
   --color-borde: #c9b9af;
   --color-titulo: #4a3f3b;
@@ -126,7 +127,7 @@ body, p, td, label {
 .section-titulo {
   color: var(--color-grilla-oscuro);
   font-size: 1.7rem;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   font-weight: 700;
   text-align: center;
   position: relative;
@@ -137,7 +138,7 @@ body, p, td, label {
   width: 60px;
   height: 3px;
   background-color: var(--color-primario);
-  margin: 8px auto 0;
+  margin: 8px auto;
   border-radius: 2px;
 }
 
@@ -161,7 +162,7 @@ body, p, td, label {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  text-align: left;
+  text-align: center;
 }
 .servicios article {
   background: #fbf6ef;
@@ -243,13 +244,13 @@ tr:nth-child(odd)  { background-color: #fcf5ea; }
   bottom: -26px;
 }
 
-/* Hobbies flip */
+/* Hobbies */
 .hobbies-icon-display {
   display: flex;
   flex-direction: column;
   gap: 20px;
   perspective: 1000px;
-  padding-top: 15px;
+  padding-top: 5px;
 }
 .hobby-icon-item {
   width: 100%;
@@ -260,7 +261,7 @@ tr:nth-child(odd)  { background-color: #fcf5ea; }
   transition: transform 0.6s ease-in-out;
   border-radius: 8px;
   box-shadow: 2px 2px 8px var(--color-grilla-oscuro);
-  background-color: var(--color-fondo);
+  background-color: var(--color-tarjeta-item);
 }
 .hobby-icon-item:hover {
   transform: rotateY(180deg);
