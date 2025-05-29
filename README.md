@@ -44,14 +44,11 @@ Se han agregado media queries para distintos tamaños de pantalla:
 ## 📸 Capturas de pantalla  
 **Vista Web**  
 
-![Escritorio1](img/screenshot1.png)  
-
-![Escritorio2](img/screenshot2.png)  
-
-![Escritorio2](img/screenshot3.png)  
+<img src="img/screenshotWeb.png" alt="Descripción" width="400"/>
 
 **Vista Mobile**  
 
-![Movil](img/screenshot4.png)  
+<img src="img/screenshotMob.png" alt="Descripción" width="200"/>
+
 
 
