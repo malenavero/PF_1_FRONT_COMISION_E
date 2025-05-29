@@ -142,7 +142,30 @@ body, p, td, label {
   border-radius: 2px;
 }
 
-/* Img Perfil centrada */
+
+/* Sobre mi */
+
+
+#sobre-mi p {
+  max-width: 700px;
+  margin: 0 auto 1em; 
+  text-align: center;  
+  line-height: 1.6;     
+  font-size: 1.05rem;  
+  font-style: italic; 
+}
+
+#sobre-mi p strong {
+  color: var(--color-secundario);
+  font-weight: 700;
+}
+
+#sobre-mi .section-titulo {
+  margin-bottom: 30px; 
+  letter-spacing: 0.5px;
+}
+
+/* Img Perfil  */
 .perfil {
   display: block; 
   width: 120px;
