@@ -1,18 +1,60 @@
-## Tecnologías Usadas
+### Mi Portfolio 
 
-- **HTML5**: Estructura de la página y formulario de contacto.
-- **CSS3**: Estilos de la página.
-- **Google Fonts**: Uso de la fuente **Roboto** 
+Este repositorio contiene mi portfolio personal desarrollado con HTML, CSS y un pequeño script en JavaScript. El diseño sigue una estética vintage, con secciones de **Sobre mí**, **Qué hago**, **Tecnologías**, **Hobbies** y **Contacto**.  
 
-## Estructura de la Página
+---  
 
-- **Encabezado**: Título del portfolio.
-- **Sección "Sobre mí"**: Una breve presentación personal con mi foto.
-- **Sección "Tecnologías, lenguajes y hobbies"**: Una tabla que enumera las tecnologías que conozco, las que quiero aprender y mis hobbies.
-- **Formulario de contacto**: Un formulario básico con campos para nombre, apellido, email y teléfono para que la persona que visita la página pueda contactarse.
 
-## Mejoras y Ideas Futuras
+### 📁 Estructura del proyecto  
+```
+├── css/              # Archivos CSS
+    ├── styles.css  
+├── img/              # Imágenes y capturas de pantalla
+│   ├── profile.png
+│   ├── screenshot1.png
+│   ├── screenshot2.png
+│   └── screenshot3.png
+├── index.html        # Página principal
+└── README.md         # Documentación del proyecto
+```
 
-- **Diseño responsive**: Mejorar el diseño para que se vea bien en dispositivos móviles.
-- **Interactividad**: Incluir más efectos interactivos como animaciones al desplazarse por la página.
-- **Agregar iconos**: Sustituir los textos en la tabla por iconos representativos de las tecnologías.
+## 🚀 Deploy  
+
+Visita la versión deployada en GitHub Pages: [https://malenavero.github.io/PF_1_FRONT_COMISION_E/](https://malenavero.github.io/PF_1_FRONT_COMISION_E/)
+
+---
+
+## 🛠 Tecnologías utilizadas  
+- **HTML**  
+- **CSS** (Grid, Flexbox, Media Queries)  
+- **JavaScript** (menú hamburguesa)  
+- **Font Awesome** (iconos)  
+
+---
+
+## 📐 Responsive  
+Se han agregado media queries para distintos tamaños de pantalla:  
+- **Tablet horizontal** (max-width: 1080px)  
+- **Tablet vertical** (max-width: 768px)  
+- **Móvil 1** (max-width: 480px)  
+- **Móvil 2** (max-width: 375px)  
+
+---
+
+## 📸 Capturas de pantalla  
+**Vista Web**  
+
+![Escritorio](img/screenshot1.png)  
+
+![Tablet](img/screenshot2.png)  
+
+![Móvil](img/screenshot3.png)  
+
+**Vista Mobile**  
+
+![Escritorio](img/screenshot4.png)  
+
+![Tablet](img/screenshot5.png)  
+
+![Móvil](img/screenshot6.png)  
+
