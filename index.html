@@ -1,64 +1,175 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Portfolio Mejorado</title>
+  
+  <!-- Estilos principales -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Iconos y tipografías -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/simple-icons-font@v6/font/simple-icons.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 <body>
-    <!-- Encabezado principal -->
-    <header id="header">
-        <h1 id="titulo-principal">Mi Portfolio</h1>
-    </header>
+  <!-- ==================== HEADER Y NAVEGACIÓN ==================== -->
+  <header id="header">
+    <h1 id="titulo-principal">Mi Portfolio</h1>
+		 <!-- Botón hamburguesa -->
+		<button id="btn-hamburguesa" aria-label="Abrir menú">
+			<i class="fas fa-bars"></i>
+		</button>
+		 <!-- Barra de nav -->
+    <nav>
+      <ul class="nav-lista">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#que-hago">Qué hago</a></li>
+        <li><a href="#tecnologias">Tecnologías</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Sección principal con presentación -->
-    <main>
-        <section id="sobre-mi" class="section-card">
-            <h2 class="section-titulo">Sobre mí</h2>
-            <!-- TODO: Pensar la presentación para que quede en dos renglones separados o ver el formato para que quede mejor visualmente -->
-            <p>¡Hola! Soy Male, fan de la resolución de bugs pero también siempre listo para empezar un proyecto de cero.</p>
-            <img src="img/pizza.png" alt="Mi foto" class="perfil">
-        </section>
+  <main>
+    <!-- ==================== SECCIÓN SOBRE MÍ ==================== -->
+    <section id="sobre-mi" class="section-card">
+      <h2 class="section-titulo">🧑‍💻 Sobre mí</h2>
+      <p>¡Hola! Soy Male, desarrollador fullstack con una fuerte inclinación a la resolución de problemas. Me apasiona descubrir cómo funcionan las cosas y mejorarlas.</p>
+      <p>Disfruto tanto de trabajar en equipo como de llevar adelante proyectos personales desde cero. Siempre abierto a aprender nuevas tecnologías y retos.</p>
+      <p>Mi objetivo es crear soluciones eficientes y escalables que impacten positivamente a los usuarios.</p>
+      <img src="img/pizza-s-f.png" alt="Avatar de Male, estilo Daria" class="perfil" />
+    </section>
 
-        <!-- Tabla con tecnologías y hobbies -->
-        <section id="tecnologias" class="section-card">
-            <h2 class="section-titulo">Tecnologías, lenguajes y hobbies</h2>
-            <table>
-                <tr>
-                    <th>¿Qué conozco?</th>
-                    <th>¿Qué quiero aprender?</th>
-                    <th>Hobbies</th>
-                </tr>
-                <tr>
-                    <td>Python(Django, DRF), JS(NodeJS), C#, MongoDB</td>
-                    <td>JAVA, C++, C</td>
-                    <td>Tango, gastronomía vegana y fotografía</td>
-                </tr>
-            </table>
-        </section>
+    <!-- ==================== SECCIÓN QUÉ HAGO ==================== -->
+    <section id="que-hago" class="section-card">
+      <h2 class="section-titulo">🛠️ Qué hago</h2>
+      <div class="servicios">
+        <article>
+          <h3>Desarrollo Web</h3>
+          <p>Creo aplicaciones web dinámicas usando Node.js, Express y bases de datos modernas como MongoDB.</p>
+        </article>
+        <article>
+          <h3>APIs REST</h3>
+          <p>Diseño e implemento APIs robustas para conectar frontend y backend eficientemente.</p>
+        </article>
+        <article>
+          <h3>Solución de bugs</h3>
+          <p>Me encanta investigar y resolver errores para mejorar la estabilidad del código.</p>
+        </article>
+      </div>
+    </section>
 
-        <!-- Formulario de contacto -->
-        <section id="contacto" class="section-card">
-            <h2 class="section-titulo">Contacto</h2>
-            <form id="formulario-contacto">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
-                
-                <!-- al poner type email valida el formato de mail -->
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono">
-                
-                <button type="submit" class="btn-enviar">Enviar</button>
-            </form>
-        </section>
-    </main>
+    <!-- ==================== SECCIÓN TECNOLOGÍAS ==================== -->
+    <section id="tecnologias" class="section-card">
+      <h2 class="section-titulo">💻 Tecnologías</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Tecnologías que manejo</th>
+            <th>Tecnologías que quiero aprender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="tech-item"><i class="si si-python"></i><span>Python</span></div>
+              <div class="tech-item"><i class="si si-django"></i><span>Django</span></div>
+              <div class="tech-item"><i class="si si-javascript"></i><span>JavaScript</span></div>
+              <div class="tech-item"><i class="si si-nodedotjs"></i><span>Node.js</span></div>
+              <div class="tech-item"><i class="si si-csharp"></i><span>C#</span></div>
+              <div class="tech-item"><i class="si si-mongodb"></i><span>MongoDB</span></div>
+            </td>
+            <td>
+              <div class="tech-item"><i class="si si-java"></i><span>Java</span></div>
+              <div class="tech-item"><i class="si si-cplusplus"></i><span>C++</span></div>
+              <div class="tech-item"><i class="si si-c"></i><span>C</span></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ==================== SECCIÓN HOBBIES ==================== -->
+    <section id="hobbies" class="section-card">
+      <h2 class="section-titulo">🎨 Hobbies</h2>
+      <div class="hobbies-icon-display">
+        <div class="hobby-icon-item">
+          <i class="fas fa-shoe-prints"></i>
+          <div class="hobby-back-content">
+            <span>Tango</span>
+            <p class="hobby-description">Disfruto del baile social y la cultura del tango argentino.</p>
+          </div>
+        </div>
+        <div class="hobby-icon-item">
+          <i class="fas fa-seedling"></i>
+          <div class="hobby-back-content">
+            <span>Gastronomía Vegana</span>
+            <p class="hobby-description">Cocinar para las personas que amo me divierte e inspira.</p>
+          </div>
+        </div>
+        <div class="hobby-icon-item">
+          <i class="fas fa-camera-retro"></i>
+          <div class="hobby-back-content">
+            <span>Fotografía</span>
+            <p class="hobby-description">El registro fotográfico como ejercicio de memoria.</p>
+          </div>
+        </div>
+        <div class="hobby-icon-item">
+          <i class="fas fa-paper-plane"></i>
+          <div class="hobby-back-content">
+            <span>Viajes</span>
+            <p class="hobby-description">Conocer lugares y culturas nuevas, con amigues o en pareja.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECCIÓN CONTACTO ==================== -->
+    <section id="contacto" class="section-card">
+      <h2 class="section-titulo">📬 Contacto</h2>
+      <form id="formulario-contacto">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" />
+
+        <button type="submit" class="btn-enviar">
+           Enviar
+        </button>
+      </form>
+    </section>
+  </main>
+
+
+
+	<script>
+		const btn = document.getElementById('btn-hamburguesa');
+		const nav = document.querySelector('.nav-lista');
+		btn.addEventListener('click', () => {
+			nav.classList.toggle('abierto');
+		});
+	</script>
 </body>
 </html>

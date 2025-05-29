@@ -1,125 +1,415 @@
-/* Defino variables globales para hacer más simples las pruebas de colores */
+/* ==================== AJUSTES GENERALES ==================== */
+
+/* Variables de color */
 :root {
-    --color-primario: #3c3c3c;
-    --color-secundario: #555;
-    --color-hover: #ebebeb;
-    --color-texto-header:  #ebebeb;
-    --color-fondo: #f6f6f6;  
-    --color-texto: #4f4f4f; 
-    --color-borde: #ddd;      /* Color de los bordes */
-    --color-titulo: #222;   
-    --color-grilla: #caf3cb; 
-    --color-grilla-oscuro: #6d8556;
+  --color-primario: #556d5b;
+  --color-secundario: #698b63;
+  --color-hover: #dcd1c4;
+  --color-texto-header: #f0eadc;
+  --color-texto-oscuro: #3c3c3c;
+  --color-fondo: #f9fce1;
+  --color-texto: #4a3f3b;
+  --color-borde: #c9b9af;
+  --color-titulo: #4a3f3b;
+  --color-grilla: #8ea68e;
+  --color-grilla-oscuro: #556d64;
+  --color-glow: #e5dccd;
+  --color-tarjeta-back: #fcf5ea;
 }
 
-/* Estilos generales */
+/* ==================== MOBILE-FIRST: MENÚ HAMBURGUESA ==================== */
+
+/* Mostrar botón hamburguesa siempre en mobile */
+#btn-hamburguesa {
+  display: block;
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-texto-header);
+  cursor: pointer;
+  z-index: 200;
+}
+
+/* Ocultar lista de navegación por defecto */
+nav .nav-lista {
+  display: none;
+  list-style: none;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  margin: 0;
+  background-color: var(--color-primario);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+/* Cuando esté abierta (.abierto) */
+nav .nav-lista.abierto {
+  display: flex;
+}
+nav .nav-lista.abierto li {
+  margin: 10px 0;
+}
+
+/* ==================== ESTILOS BASE ==================== */
+
+/* Body */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--color-fondo);
-    text-align: center;
-    background-image: 
-        /* Fondo de grilla cuadrille */
-        linear-gradient(to right, var(--color-grilla) 1px, transparent 1px), 
-        linear-gradient(to bottom, var(--color-grilla) 1px, transparent 1px);
-    background-size: 20px 20px; /* Tamaño de cada cuadrícula */
-    color: var(--color-texto);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 180px;
+  background-color: var(--color-fondo);
+  background-image:
+    linear-gradient(to right, rgba(115, 95, 96, 0.15) 2px, transparent 1px),
+    linear-gradient(to bottom, rgba(106, 113, 95, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: var(--color-texto);
+  font-size: 0.9rem;
+  text-align: center;
+}
+body, p, td, label {
+  color: var(--color-texto);
 }
 
-/* Estilos encabezado */
+/* Header fijo */
 #header {
-    background-color: var(--color-primario);
-    color: var(--color-texto-header);
-    padding: 20px;
-    font-size: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra abajo del recuadro del encabezado */
+  background-color: var(--color-primario);
+  color: var(--color-texto-header);
+  padding: 10px;
+  font-size: 20px;
+  box-shadow: 0 4px 8px var(--color-grilla-oscuro);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  text-shadow: 0 0 6px var(--color-glow);
 }
 
-/* Estilos de los titulos*/
-.section-titulo {
-    color: var(--color-grilla-oscuro); 
-    font-size: 22px;
-    margin-bottom: 10px;
+/* Enlaces (cuando el menú esta visible) */
+.nav-lista a {
+  color: var(--color-texto-header);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.nav-lista a:hover,
+.nav-lista a:focus {
+  color: var(--color-hover);
+  text-decoration: underline;
+  transform: scale(1.1);
+  outline: none;
 }
 
-/* Estilos de las secciones (cards) */
+/* Tarjetas de sección */
 .section-card {
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px; /* Redondeo las esquinas de las cards de las secciones */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    transition: box-shadow 0.3s ease; /* Suaviza la transición de la sombra */
+  background: var(--color-tarjeta-back);
+  margin: 20px 10px;
+  padding: 20px 15px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 15px var(--color-grilla-oscuro);
+  text-align: left;
+  transition: box-shadow 0.3s ease;
 }
-
-/* Añadir hover a las secciones */
 .section-card:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); /* Sombra suave al pasar por encima de las cards */
+  box-shadow: 6px 6px 20px var(--color-grilla-oscuro);
 }
 
-/* Estilos de la imagen de perfil */
+/* Título de sección */
+.section-titulo {
+  color: var(--color-grilla-oscuro);
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+}
+.section-titulo::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-primario);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Img Perfil centrada */
 .perfil {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover; /* Esto lo googlee, necesitaba mejorar como se disponia la imagen en el contenedor sin perder la relacion */
-    margin-top: 10px; /* Espacio arriba de la imagen */
+  display: block; 
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 15px auto 0;
+  transition: transform 0.6s ease;
+}
+.perfil:hover {
+  transform: rotate(360deg);
 }
 
-/* Estilos de la tabla */
+
+/* Servicios */
+.servicios {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+.servicios article {
+  background: #fbf6ef;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 4px 4px 15px var(--color-grilla-oscuro);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.servicios article:hover {
+  box-shadow: 6px 6px 20px var(--color-grilla-oscuro);
+  transform: translateY(-5px);
+}
+.servicios h3 {
+  color: var(--color-primario);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+/* Tabla de tecnologías */
 table {
-    width: 100%;
-    border-collapse: collapse; /* Une los bordes de la tabla para que no queden espacios */
-    margin-top: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
 }
-
+thead {
+  background-color: var(--color-primario);
+  color: var(--color-texto-oscuro);
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
 th, td {
-    border: 1px solid var(--color-borde);
-    padding: 10px;
-    text-align: center;
-    transition: background-color 0.3s ease; /* Suaviza la transición del hover en las celdas */
-    color: var(--color-texto); 
+  border: 1px solid var(--color-borde);
+  padding: 8px 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+tr:nth-child(even) { background-color: #f9f5ef; }
+tr:nth-child(odd)  { background-color: #fcf5ea; }
+
+/* Iconos tech */
+.tech-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 5px;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+.tech-item i {
+  font-size: 1.8rem;
+  color: var(--color-grilla-oscuro);
+}
+.tech-item span {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-primario);
+  color: var(--color-texto-header);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, bottom 0.2s ease;
+}
+.tech-item:hover i {
+  color: var(--color-primario);
+  transform: scale(1.1);
+  opacity: 0.7;
+}
+.tech-item:hover span {
+  opacity: 1;
+  visibility: visible;
+  bottom: -26px;
 }
 
-th {
-    background-color: var(--color-secundario);
-    color: var(--color-texto-header);
+/* Hobbies flip */
+.hobbies-icon-display {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  perspective: 1000px;
+  padding-top: 15px;
+}
+.hobby-icon-item {
+  width: 100%;
+  min-height: 120px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px var(--color-grilla-oscuro);
+  background-color: var(--color-fondo);
+}
+.hobby-icon-item:hover {
+  transform: rotateY(180deg);
+  box-shadow: 4px 4px 12px var(--color-grilla-oscuro);
+}
+.hobby-icon-item i {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 2.5rem;
+  color: var(--color-primario);
+  backface-visibility: hidden;
+}
+.hobby-back-content {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-color: var(--color-tarjeta-back);
+  border-radius: 8px;
+}
+.hobby-back-content span {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.hobby-back-content p.hobby-description {
+  font-size: 0.85rem;
+  margin-top: 4px;
 }
 
-/* Hover en las celdas */
-td:hover {
-    background-color: var(--color-hover);
+/* Formularios */
+input, button {
+  font-family: inherit;
 }
-
-/* Estilos del formulario */
-form {
-    display: flex; /* Ya conocía flex y traté d eimplementarlo acá */
-    flex-direction: column; 
-    gap: 10px; /* Espacio entre los elementos del formulario */
-}
-
 input {
-    padding: 8px;
-    border: 1px solid var(--color-borde);
-    border-radius: 5px;
-    color: var(--color-texto); 
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
 }
-
-/* Estilos del botón */
+input:focus {
+  outline: none;
+  border-color: var(--color-grilla-oscuro);
+  box-shadow: 0 0 6px var(--color-grilla-oscuro);
+}
 .btn-enviar {
-    background-color: var(--color-primario);
-    color: var(--color-texto-header);
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Suaviza la transición del hover */
+  display: block;          /* cambiar inline-flex a bloque para centrar distinto que los labels del form */
+  margin: 0 auto;       
+  padding: 10px;
+  font-size: 1rem;
+  gap: 6px;
+  background-color: var(--color-primario);
+  color: var(--color-texto-header);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Estilos cuando el botón está en hover */
 .btn-enviar:hover {
-    background-color: var(--color-secundario);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: var(--color-grilla-oscuro);
+  box-shadow: 0 0 6px var(--color-grilla-oscuro);
 }
+
+
+/* ==================== MEDIA QUERIES (DESKTOP) ==================== */
+
+/* Hicimos un css mobile first, es decir, las media queries las hacemos para pantallas mas grandes. */
+
+/* Tablet horizontal y Desktop (≥ 769px) */
+@media (min-width: 769px) {
+  body {
+		font-size: 1rem;
+		padding-top: 180px;
+	}
+  #btn-hamburguesa    {
+		display: none;
+	}
+  /* Menú horizontal */
+  nav .nav-lista {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    background: none;
+    position: static;
+    width: auto;
+    padding: 0;
+    margin: 15px 0 0;
+  }
+  /* Secciones en filas */
+  .servicios {
+    flex-direction: row;
+    gap: 25px;
+  }
+  .hobbies-icon-display {
+    flex-direction: row;
+    gap: 30px;
+  }
+  /* Tarjetas más grandes */
+  .section-card {
+    margin: 30px auto;
+    padding: 30px 25px;
+    max-width: 900px;
+  }
+  .perfil {
+    width: 160px; height: 160px;
+  }
+  .section-titulo { font-size: 1.9rem; }
+  .servicios h3  { font-size: 1.4rem; }
+  .tech-item i   { font-size: 2rem; margin: 0 10px; }
+  .hobby-icon-item {
+    width: 22%;
+    min-width: 180px;
+    height: 150px;
+  }
+}
+
+/* Tablet vertical (481px–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body { font-size: 0.95rem; }
+  #header { font-size: 22px; padding: 15px; }
+  .servicios article,
+  .hobby-icon-item {
+    max-width: 80%;
+    margin-bottom: 20px;
+  }
+  table { display: block; overflow-x: auto; white-space: nowrap; }
+  #formulario-contacto input {
+    width: calc(100% - 24px);
+  }
+}
+
+/* Tablet horizontal (769px–1080px) ajustes extra */
+@media (min-width: 769px) and (max-width: 1080px) {
+  .section-card {
+    max-width: 800px;
+  }
+}
+
+/* Desktop grande (>1080px) mantiene valores base */
